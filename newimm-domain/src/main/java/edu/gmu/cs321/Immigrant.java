@@ -27,4 +27,8 @@ public class Immigrant {
     public void setID(int ID){
         this.ID = ID;
     }
+
+    public boolean checkNum(int num) {
+        return true;
+    }
 }
