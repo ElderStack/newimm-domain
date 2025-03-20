@@ -26,8 +26,8 @@ public class Immigrant {
 
     /**
      * Parameterized Constructor
-     * @param name Name of the Immigrant
-     * @param ID Unique ID of the Immigrant
+     * @param name  Name of the Immigrant
+     * @param ID    Unique ID of the Immigrant
      */
     public Immigrant(String name, int ID) {
         this.name = name;
@@ -44,7 +44,7 @@ public class Immigrant {
 
     /**
      * Returns the name of the Immigrant
-     * @return String name
+     * @return      String name
      */
     public String getName() {
         return this.name;
@@ -52,7 +52,7 @@ public class Immigrant {
 
     /**
      * Returns the name of the Immigrant
-     * @return int ID
+     * @return      int ID
      */
     public int getID() {
         return this.ID;
@@ -60,7 +60,7 @@ public class Immigrant {
 
     /**
      * Sets the name of the Immigrant
-     * @param name Name to be set
+     * @param name  Name to be set
      */
     public void setName(String name) {
         this.name = name;
@@ -68,7 +68,7 @@ public class Immigrant {
 
     /**
      * Sets the ID of the Immigrant
-     * @param ID ID to be set
+     * @param ID    ID to be set
      */
     public void setID(int ID) {
         this.ID = ID;
