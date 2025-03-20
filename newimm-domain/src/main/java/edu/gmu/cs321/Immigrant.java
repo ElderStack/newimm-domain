@@ -3,11 +3,18 @@ package edu.gmu.cs321;
 public class Immigrant {
     private String name;
     private int ID;
+
+    public Immigrant() {
+        this.name = null;
+        this.ID = -1;
+    }
+
     public Immigrant(String name, int ID) {
         this.name = name;
         this.ID = ID;
     }
 
+    @Override
     public String toString() {
         return "Name: " + this.name + ", ID: " + this.ID;
     }
@@ -26,9 +33,5 @@ public class Immigrant {
 
     public void setID(int ID) {
         this.ID = ID;
-    }
-
-    public boolean checkNum(int num) {
-        return true;
     }
 }
