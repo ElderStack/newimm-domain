@@ -8,23 +8,23 @@ public class Immigrant {
         this.ID = ID;
     }
 
-    public String toString(){
+    public String toString() {
         return "Name: " + this.name + ", ID: " + this.ID;
     }
 
-    public String getName(){
+    public String getName() {
         return this.name;
     }
 
-    public int getID(){
+    public int getID() {
         return this.ID;
     }
 
-    public void setName(String name){
+    public void setName(String name) {
         this.name = name;
     }
 
-    public void setID(int ID){
+    public void setID(int ID) {
         this.ID = ID;
     }
 
