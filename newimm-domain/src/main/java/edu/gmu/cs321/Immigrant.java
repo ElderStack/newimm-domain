@@ -1,5 +1,5 @@
 package edu.gmu.cs321;
-
+//Lance
 public class Immigrant {
     private String name;
     private int ID;
