@@ -59,7 +59,8 @@ public class Immigrant {
      */
     @Override
     public String toString() {
-        return "Name: " + this.name + ", ID: " + this.ID;
+        return "Name: " + this.name + ", ID: " + this.ID + ", Address: " + this.address +
+        ", Date of Birth: " + this.DoB;
     }
 
     /**
@@ -137,7 +138,7 @@ public class Immigrant {
         splitDate[2].length() == 2) {
             //checks each string to see if its numeric
             for (String item: splitDate){
-                if (!isNumeric(item)){
+                if (!validDate(item)){
                     return false;
                 }
             }
@@ -157,11 +158,34 @@ public class Immigrant {
         }
 
         try {
-            double num = Double.parseDouble(str);
+            Double.valueOf(str);
             return true;
         } 
         catch (NumberFormatException e) {
             return false;
         }
+    }
+
+    /**
+     * Helper method that checks if the date falls within real ranges
+     * Checks if all numbers are greater then 0
+     * For month and year checks if number is less then 31
+     * Means we can have a 31st month but if we need to validate that later we can do it here
+     */
+    private boolean validDate(String str){
+        if (!isNumeric(str)){
+            return false;
+        }
+
+        Double num = Double.valueOf(str);
+        if (num < 0){
+            return false;
+        }
+        if (str.length() == 2) {
+            if (num > 31) {
+                return false;
+            }
+        }
+        return true;
     }
 }
