@@ -10,7 +10,6 @@ public class Form {
      * Default constructor for Form class.
     */
     public Form() {
-        this.address = null;
         this.immInfo = new Immigrant();
     }
 
@@ -19,7 +18,7 @@ public class Form {
      * @param immigrantInfo An Immigrant object which contains the immigrant's information
      */
     public Form(Immigrant immigrantInfo) {
-        this.immigrantInfo = new Immigrant(immigrantInfo.getName(), immigrantInfo.getID(), immigrantInfo.getAddress(), immigrantInfo.getDoB());
+        this.immInfo = new Immigrant(immigrantInfo.getName(), immigrantInfo.getID(), immigrantInfo.getAddress(), immigrantInfo.getDoB());
     }
 
     /**
@@ -27,7 +26,7 @@ public class Form {
      * @return      Immigrant object containing informaion inputted by user
      */
     public Immigrant getImmigrantInfo() {
-        return immigrantInfo;
+        return immInfo;
     }
 
     /**
@@ -38,9 +37,9 @@ public class Form {
      * @param DoB       a Calendar object representing the immigrant's date of birth
      */
     public void setImmigrantInfo(String name, int ID, String address, String DoB) {
-        immigrantInfo.setName(name);
-        immigrantInfo.setID(ID);
-        immigrantInfo.setAddress(address);
-        immigranInfo.setDoB(DoB);
+        immInfo.setName(name);
+        immInfo.setID(ID);
+        immInfo.setAddress(address);
+        immInfo.setDoB(DoB);
     }
 }

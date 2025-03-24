@@ -121,7 +121,7 @@ public class Immigrant {
     /**
      * Sets Immigrant Date of Birth
      */
-    public void setDob(String newDoB){
+    public void setDoB(String newDoB){
         if (verifyDoB(newDoB)){
             this.DoB = newDoB;
         }

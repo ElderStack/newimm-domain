@@ -59,7 +59,7 @@ public class ImmigrantTest {
         assertTrue(testImm.getAddress().equals(testAddress));
 
         String testDoB = "1999/10/12";
-        testImm.setDob(testDoB);
+        testImm.setDoB(testDoB);
         assertTrue(testImm.getDoB().equals(testDoB));
 
         testImm = new Immigrant(this.name, this.id, this.address, this.DoB);
