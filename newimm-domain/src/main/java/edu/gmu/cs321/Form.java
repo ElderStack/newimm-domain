@@ -1,36 +1,25 @@
 package edu.gmu.cs321;
 
-/**
+/** 
  * The Form class which will be displayed to the user in order to retrieve their information for further validation.
  */
 public class Form {
-    private String address = "";
-    private Immigrant immigrantInfo;
+    private Immigrant immInfo;
 
-    /**
+    /** 
      * Default constructor for Form class.
     */
     public Form() {
         this.address = null;
-        this.immigrantInfo = new Immigrant();
+        this.immInfo = new Immigrant();
     }
 
     /**
      * Parameterized Form constructor containing an immigrants info using the Immigrant object and the immigrant's address.
-     * @param address       A String representation of the immigrant's address
      * @param immigrantInfo An Immigrant object which contains the immigrant's information
      */
-    public Form(String address, Immigrant immigrantInfo) {
-        this.address = address;
-        this.immigrantInfo = new Immigrant(immigrantInfo.getName(), immigrantInfo.getID());
-    }
-
-    /**
-     * Returns the address of the immigrant.
-     * @return      String representation of the immigrant's address inputted by user
-     */
-    public String getAddress() {
-        return address;
+    public Form(Immigrant immigrantInfo) {
+        this.immigrantInfo = new Immigrant(immigrantInfo.getName(), immigrantInfo.getID(), immigrantInfo.getAddress(), immigrantInfo.getDoB());
     }
 
     /**
@@ -43,11 +32,15 @@ public class Form {
 
     /**
      * Sets the immigrant's information to the information provided as parameters.
-     * @param name  a String representation of the immigrant's name
-     * @param ID    an int value which is the immigrant's ID number
+     * @param name      a String representation of the immigrant's name
+     * @param ID        an int value which is the immigrant's ID number
+     * @param address   a String representation of the immigrant's address
+     * @param DoB       a Calendar object representing the immigrant's date of birth
      */
-    public void setImmigrantInfo(String name, int ID) {
+    public void setImmigrantInfo(String name, int ID, String address, String DoB) {
         immigrantInfo.setName(name);
         immigrantInfo.setID(ID);
+        immigrantInfo.setAddress(address);
+        immigranInfo.setDoB(DoB);
     }
 }
