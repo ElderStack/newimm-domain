@@ -104,7 +104,7 @@ public class Immigrant {
     }
 
     /**
-     * 
+     * Returns Immigrant Date of Birth
      * @return
      */
     public String getDoB() {
