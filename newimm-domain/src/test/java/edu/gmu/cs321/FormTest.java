@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * Unit tests for the Form class.
  */
 public class FormTest {
-    private Immigrant formTest = new Immigrant("Karl", 1);
+    private Immigrant formTest = new Immigrant("Karl", 1, "My Address", "2001/01/01");
 
     /**
      * The test method for all the getters of the Form class.
