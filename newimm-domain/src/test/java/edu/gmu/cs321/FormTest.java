@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * Unit tests for the Form class.
  */
 public class FormTest {
-    private Immigrant formTest = new Immigrant("Karl", 1, "My Address", "2001/01/01");
+    private Form formTest = new Form(new Immigrant("Karl", 1, "My Address", "2001/01/01"));
 
     /**
      * The test method for all the getters of the Form class.
@@ -39,7 +39,7 @@ public class FormTest {
         String name = "steve";
         int ID = 12;
         String DoB = "2001/09/02";
-        Immigrant immTest = new Immigrant(name, address, ID, DoB);
+        Immigrant immTest = new Immigrant(name, ID, address, DoB);
         Form testForm = new Form(immTest);
         assertTrue(testForm.getImmigrantInfo() == (immTest));
 
