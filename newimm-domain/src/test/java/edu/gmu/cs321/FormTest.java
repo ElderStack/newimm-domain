@@ -17,7 +17,7 @@ public class FormTest {
      */
     @Test
     public void testGetters() {
-        boolean testGetImmigrant = formTest.getImmigrantInfo() == new Immigrant("Karl", 1);
+        boolean testGetImmigrant = formTest.getImmigrantInfo() == new Immigrant("Karl", 1, "Address", "2003/09/02");
         assertTrue(testGetImmigrant);
     }
 
