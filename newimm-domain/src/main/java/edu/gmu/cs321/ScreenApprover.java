@@ -1,5 +1,5 @@
 package edu.gmu.cs321;
 
-public class ScreenApprover{
-
+public class ScreenApprover {
+    
 }
