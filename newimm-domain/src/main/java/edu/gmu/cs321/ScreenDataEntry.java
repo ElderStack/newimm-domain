@@ -71,14 +71,13 @@ public class ScreenDataEntry extends Application {
         textBoxCounter++;
     }
 
-    /*private Immigrant createImmigrant(ArrayList<TextField> textFields){
+    private Immigrant createImmigrant(ArrayList<TextField> textFields){
         Immigrant newImm = new Immigrant();
-        newImm.setFirstName(textFields.get(0).getText());
-        newImm.setLastName(textFields.get(1).getText());
+        newImm.setName(textFields.get(0).getText() + " " + textFields.get(1).getText());
         newImm.setDoB(textFields.get(2).getText());
         newImm.setAddress(textFields.get(3).getText());
+        return newImm;
     }
-    */
 
     @Override
     public void start(Stage primaryStage) {

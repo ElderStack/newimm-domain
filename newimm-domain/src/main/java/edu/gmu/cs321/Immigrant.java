@@ -71,12 +71,7 @@ public class Immigrant {
         this.name = name;
         this.ID = ID;
         this.address = address;
-        try{
-            verifyDoB(DoB);
-        }
-        catch (ParseException e) {
-            this.DoB = new Date();
-        }
+        verifyDoB(DoB);
     }
 
     /**
@@ -153,7 +148,7 @@ public class Immigrant {
     /**
      * Sets Immigrant Date of Birth from String
      */
-    public void setDoB(String Date) throws ParseException{
+    public void setDoB(String Date){
         verifyDoB(Date);
     }
 
@@ -161,9 +156,14 @@ public class Immigrant {
      * Verifies that the String submitted as the date of birth is formatted correctly
      * @return ture if date of birth is submitted correctly.
      */
-    private void verifyDoB(String strDoB) throws ParseException {
-        DateFormat format = new SimpleDateFormat();
-        this.DoB = format.parse(strDoB);
+    private void verifyDoB(String strDoB){
+        try{
+            DateFormat format = new SimpleDateFormat();
+            this.DoB = format.parse(strDoB);
+        }
+        catch (ParseException e){
+            System.err.println("Date format was incorrect.");
+        }
     }
 
     /**

@@ -33,7 +33,7 @@ public class ImmigrantTest {
     }
 
     /**
-     * Test Immigrant.java setter functions. 
+     * Test Immigrant.java setter functions.
      * Test Values:
      * - name = "Big Boss"
      * - id = 2
@@ -68,7 +68,7 @@ public class ImmigrantTest {
      * - id = -1;
      * - address = null
      * - DoB = null
-     * 
+     *
      * Test Values for parameterized constructor:
      * - name = "Ocelot"
      * - id = 7
@@ -82,7 +82,7 @@ public class ImmigrantTest {
         String testAddress = "6758 Victory Road";
         String testDoB = "3000/01/01";
         Immigrant newImm = new Immigrant(testName, testID, testAddress, testDoB);
-        
+
         assertTrue(newImm.getName().equals(testName));
         assertTrue(newImm.getID() == testID);
         assertTrue(newImm.getAddress().equals(testAddress));
