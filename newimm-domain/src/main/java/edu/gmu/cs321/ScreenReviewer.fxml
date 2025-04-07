@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ListView layoutX="49.0" layoutY="63.0" prefHeight="111.0" prefWidth="250.0" />
+      <Label layoutX="241.0" layoutY="33.0" text="Review Flagged Form" />
+      <Button layoutX="460.0" layoutY="339.0" mnemonicParsing="false" text="Accept" />
+      <Button layoutX="394.0" layoutY="339.0" mnemonicParsing="false" text="Deny" />
+      <Label layoutX="63.0" layoutY="83.0" text="Name:" />
+      <Label layoutX="63.0" layoutY="140.0" text="Address:" />
+      <Label layoutX="63.0" layoutY="112.0" text="Date of Birth:" />
+      <TextArea layoutX="49.0" layoutY="224.0" prefHeight="162.0" prefWidth="200.0" />
+      <Label layoutX="51.0" layoutY="200.0" text="Comments" />
+      <TextField id="immigrantName" editable="false" layoutX="112.0" layoutY="79.0" prefHeight="26.0" prefWidth="174.0" text="John Doe" />
+      <TextField id="dateOfBirth" editable="false" layoutX="149.0" layoutY="108.0" prefHeight="26.0" prefWidth="137.0" text="1/2/1993" />
+      <TextField id="address" editable="false" layoutX="121.0" layoutY="136.0" prefHeight="26.0" prefWidth="166.0" text="308 Negra Arroyo Lane" />
+   </children>
+</AnchorPane>

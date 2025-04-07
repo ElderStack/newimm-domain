@@ -17,37 +17,11 @@ public class ScreenReviewer extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        primaryStage.setTitle("Immigrant Request Reviewer");
-        GridPane grid = new GridPane();
-        grid.setAlignment(Pos.CENTER);
-        grid.setHgap(10);
-        grid.setVgap(10);
-        grid.setPadding(new Insets(25, 25, 25, 25));
-
-        // Title
-        Text scenetitle = new Text("Review Immigrant Case");
-        scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
-        grid.add(scenetitle, 0, 0, 2, 1);
-
-        Label nameLabel = new Label("Immigrant Name:");
-        grid.add(nameLabel, 0, 2);
         
-        TextField nameField = new TextField();
-        grid.add(nameField, 1, 2);
 
-        Label decisionLabel = new Label("Decision:");
-        grid.add(decisionLabel, 0, 4);
-
-        Label commentsLabel = new Label("Comments:");
-        grid.add(commentsLabel, 0, 5);
+        Parent root;
         
-        Label commentsArea = new Label();
-        grid.add(commentsArea, 1, 5);
-
-        Button submitBtn = new Button("Submit");
-        grid.add(submitBtn, 1, 6);
-
-        nameField.setText("John Doe");
+        
 
         Scene scene = new Scene(grid, 400, 400);
         primaryStage.setScene(scene);
