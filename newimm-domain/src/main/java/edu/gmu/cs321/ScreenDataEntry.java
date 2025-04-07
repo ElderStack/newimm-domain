@@ -56,7 +56,7 @@ import javafx.stage.Stage;
 
 import java.util.ArrayList;
 
-public class Login extends Application {
+public class ScreenDataEntry extends Application {
     private GridPane grid = new GridPane();
     private int textBoxCounter = 1;
     private ArrayList<TextField> textFields;
