@@ -1,3 +1,7 @@
+/*
+ * Sample file from class
+ */
+
 package edu.gmu.cs321;
 
 import java.sql.*;

@@ -1,3 +1,7 @@
+/**
+ * Programmed by Jakob Elmore
+ */
+
 package edu.gmu.cs321;
 
 /**

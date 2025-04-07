@@ -1,4 +1,12 @@
+/**
+ * Programmed by Jakob Elmore
+ */
 package edu.gmu.cs321;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Models the user submitting data through the form.
@@ -17,7 +25,7 @@ public class Immigrant {
     /**
      * Date of Birth of the Immigrant
      */
-    private String DoB;
+    private Date DoB;
 
     /**
      * Address of the Immigrant
@@ -45,12 +53,29 @@ public class Immigrant {
      * @param address   Address of the Immigrant
      * @param DoB       Date of Birth of the Immigrant
      */
+    public Immigrant(String name, int ID, String address, Date DoB) {
+        this.name = name;
+        this.ID = ID;
+        this.address = address;
+        this.DoB = DoB;
+    }
+
+        /**
+     * Parameterized Constructor
+     * @param name      Name of the Immigrant
+     * @param ID        Unique ID of the Immigrant
+     * @param address   Address of the Immigrant
+     * @param DoB       Date of Birth of the Immigrant
+     */
     public Immigrant(String name, int ID, String address, String DoB) {
         this.name = name;
         this.ID = ID;
         this.address = address;
-        if (verifyDoB(DoB)){
-            this.DoB = DoB;
+        try{
+            verifyDoB(DoB);
+        }
+        catch (ParseException e) {
+            this.DoB = new Date();
         }
     }
 
@@ -107,7 +132,7 @@ public class Immigrant {
      * Returns Immigrant Date of Birth
      * @return
      */
-    public String getDoB() {
+    public Date getDoB() {
         return this.DoB;
     }
 
@@ -121,30 +146,24 @@ public class Immigrant {
     /**
      * Sets Immigrant Date of Birth
      */
-    public void setDoB(String newDoB){
-        if (verifyDoB(newDoB)){
-            this.DoB = newDoB;
-        }
+    public void setDoB(Date newDoB){
+        this.DoB = newDoB;
+    }
+
+    /**
+     * Sets Immigrant Date of Birth from String
+     */
+    public void setDoB(String Date) throws ParseException{
+        verifyDoB(Date);
     }
 
     /**
      * Verifies that the String submitted as the date of birth is formatted correctly
      * @return ture if date of birth is submitted correctly.
      */
-    private boolean verifyDoB(String DoB) {
-        String[] splitDate = DoB.split("/");
-        //checks lengths of the strings first
-        if (splitDate.length == 3 && splitDate[0].length() == 4 && splitDate[1].length() == 2 && 
-        splitDate[2].length() == 2) {
-            //checks each string to see if its numeric
-            for (String item: splitDate){
-                if (!validDate(item)){
-                    return false;
-                }
-            }
-            return true;
-        }
-        return false;
+    private void verifyDoB(String strDoB) throws ParseException {
+        DateFormat format = new SimpleDateFormat();
+        this.DoB = format.parse(strDoB);
     }
 
     /**
@@ -160,7 +179,7 @@ public class Immigrant {
         try {
             Double.valueOf(str);
             return true;
-        } 
+        }
         catch (NumberFormatException e) {
             return false;
         }

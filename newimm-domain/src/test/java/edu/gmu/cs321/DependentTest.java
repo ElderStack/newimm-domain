@@ -1,3 +1,6 @@
+/*
+ * Written by Jakob Elmore
+ */
 package edu.gmu.cs321;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -29,7 +32,7 @@ public class DependentTest {
     private Dependent testDep = new Dependent(depName, depID, depAddress, depDoB, guardian);
 
     /**
-     * Tests the getGuardian function. Returns true if the guardian is the same as the one 
+     * Tests the getGuardian function. Returns true if the guardian is the same as the one
      * passed in the constructor
      */
     @Test
@@ -38,7 +41,7 @@ public class DependentTest {
     }
 
     /**
-     * Tests the setGuardian function. Returns true if the guardian is the same as the one 
+     * Tests the setGuardian function. Returns true if the guardian is the same as the one
      * set using the function
      */
     @Test

@@ -1,12 +1,16 @@
+/**
+ * Programmed by Jakob Elmore
+ */
+
 package edu.gmu.cs321;
 
-/** 
+/**
  * The Form class which will be displayed to the user in order to retrieve their information for further validation.
  */
 public class Form {
     private Immigrant immInfo;
 
-    /** 
+    /**
      * Default constructor for Form class.
     */
     public Form() {
@@ -37,9 +41,6 @@ public class Form {
      * @param DoB       a Calendar object representing the immigrant's date of birth
      */
     public void setImmigrantInfo(String name, int ID, String address, String DoB) {
-        immInfo.setName(name);
-        immInfo.setID(ID);
-        immInfo.setAddress(address);
-        immInfo.setDoB(DoB);
+        immInfo = new Immigrant(name, ID, address, DoB);
     }
 }
