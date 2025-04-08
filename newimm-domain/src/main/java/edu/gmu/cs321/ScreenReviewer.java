@@ -20,7 +20,10 @@ public class ScreenReviewer extends Application {
         
 
         Parent root;
-        
+        try {
+            root = FXMLLoader.load(getClass().getResource("ScreenReviewer.fxml");
+            Scene scene = new Scene(root);
+        }
         
 
         Scene scene = new Scene(grid, 400, 400);
