@@ -1,5 +1,7 @@
 package edu.gmu.cs321;
 
+import java.io.IOException;
+
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -12,6 +14,8 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 
 public class ScreenReviewer extends Application {
 
@@ -21,14 +25,13 @@ public class ScreenReviewer extends Application {
 
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("ScreenReviewer.fxml");
+            root = FXMLLoader.load(getClass().getResource("ScreenReviewer.fxml"));
             Scene scene = new Scene(root);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        
-
-        Scene scene = new Scene(grid, 400, 400);
-        primaryStage.setScene(scene);
-        primaryStage.show();
     }
 
     public static void main(String[] args) {
