@@ -6,7 +6,7 @@ package edu.gmu.cs321;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.sql.Date;
 
 /**
  * Models the user submitting data through the form.
@@ -33,6 +33,8 @@ public class Immigrant {
      */
     private String address;
 
+    private String email;
+
     /**
      * Default Constructor.
      * - name = null
@@ -46,6 +48,7 @@ public class Immigrant {
         this.ID = -1;
         this.address = null;
         this.DoB = null;
+        this.email = null;
     }
 
     /**
@@ -55,11 +58,12 @@ public class Immigrant {
      * @param address   Address of the Immigrant
      * @param DoB       Date of Birth of the Immigrant
      */
-    public Immigrant(String first, String last,  int ID, String address, Date DoB) {
+    public Immigrant(String first, String last,  int ID, String address, String email, Date DoB) {
         this.firstName = first;
         this.lastName = last;
         this.ID = ID;
         this.address = address;
+        this.email = email;
         this.DoB = DoB;
     }
 
@@ -70,11 +74,18 @@ public class Immigrant {
      * @param address   Address of the Immigrant
      * @param DoB       Date of Birth of the Immigrant
      */
-    public Immigrant(String name, int ID, String address, String DoB) {
-        this.name = name;
+    public Immigrant(String first, String last, int ID, Date DoB) {
+        this.firstName = first;
+        this.lastName = last;
         this.ID = ID;
-        this.address = address;
-        verifyDoB(DoB);
+        this.DoB = DoB;
+    }
+
+    public Immigrant(String first, String last, int ID, String email) {
+        this.firstName = first;
+        this.lastName = last;
+        this.ID = ID;
+        this.email = email;
     }
 
     /**
@@ -82,7 +93,7 @@ public class Immigrant {
      */
     @Override
     public String toString() {
-        return "Name: " + this.name + ", ID: " + this.ID + ", Address: " + this.address +
+        return "Name: " + this.firstName + " " + this.lastName + ", ID: " + this.ID + ", Address: " + this.address +
         ", Date of Birth: " + this.DoB;
     }
 
@@ -91,7 +102,19 @@ public class Immigrant {
      * @return      String name
      */
     public String getName() {
-        return this.name;
+        return this.firstName + " " + this.lastName;
+    }
+
+    public String getFirstName(){
+        return this.firstName;
+    }
+
+    public String getLastName(){
+        return this.lastName;
+    }
+
+    public String getEmail(){
+        return this.email;
     }
 
     /**
@@ -106,8 +129,12 @@ public class Immigrant {
      * Sets the name of the Immigrant
      * @param name  Name to be set
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String first) {
+        this.firstName = first;
+    }
+
+    public void setLastName(String last) {
+        this.lastName = last;
     }
 
     /**
