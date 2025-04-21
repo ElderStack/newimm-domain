@@ -110,7 +110,7 @@ public class TestDatabase {
 
         // Select and display all users
         System.out.println("All users in the database:");
-        selectUsers();
+        selectImmigrants();
 
         // Update user's email
         //updateImmigrant(106, "New John", "New Last");
@@ -118,7 +118,7 @@ public class TestDatabase {
 
         // Select and display all users after update
         System.out.println("All users after update:");
-        selectUsers();
+        selectImmigrants();
     }
 
 }
