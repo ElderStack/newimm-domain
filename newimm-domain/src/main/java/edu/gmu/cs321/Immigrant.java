@@ -88,6 +88,12 @@ public class Immigrant {
         this.email = email;
     }
 
+    public Immigrant(String first, String last, int ID) {
+        this.firstName = first;
+        this.lastName = last;
+        this.ID = ID;
+    }
+
     /**
      * Outputs the Immigrant Object as a String
      */
