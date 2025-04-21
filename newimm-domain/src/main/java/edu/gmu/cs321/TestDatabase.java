@@ -80,15 +80,15 @@ public class TestDatabase {
     }
 
     // Method to update a user's email based on user ID
-    public static void updateUser(int userId, String first, String last) {
+    public static void updateImmigrant(Immigrant immigrant) {
         String updateQuery = "UPDATE immigrant SET first = ?, last = ? WHERE id = ?";
 
         try (Connection conn = getConnection();
                 PreparedStatement stmt = conn.prepareStatement(updateQuery)) {
 
-            stmt.setString(1, first);
-            stmt.setString(2, last);
-            stmt.setInt(3, userId);
+            stmt.setString(1, immigrant.getFirstName());
+            stmt.setString(2, immigrant.getLastName());
+            stmt.setInt(3, immigrant.getID());
             int rowsAffected = stmt.executeUpdate();
             if (rowsAffected > 0) {
                 System.out.println("User updated successfully.");
@@ -113,7 +113,8 @@ public class TestDatabase {
         selectUsers();
 
         // Update user's email
-        updateUser(106, "New John", "New Last");
+        //updateImmigrant(106, "New John", "New Last");
+        updateImmigrant(new Immigrant("New John", "New Last", 106));
 
         // Select and display all users after update
         System.out.println("All users after update:");
