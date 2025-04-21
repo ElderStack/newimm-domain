@@ -15,8 +15,9 @@ public class Immigrant {
     /**
      * Name of the Immigrant
      */
-    private String name;
+    private String firstName;
 
+    private String lastName;
     /**
      * Unique ID of the Immigrant
      */
@@ -40,7 +41,8 @@ public class Immigrant {
      * - DoB = null
      */
     public Immigrant() {
-        this.name = null;
+        this.firstName = null;
+        this.lastName = null;
         this.ID = -1;
         this.address = null;
         this.DoB = null;
@@ -53,8 +55,9 @@ public class Immigrant {
      * @param address   Address of the Immigrant
      * @param DoB       Date of Birth of the Immigrant
      */
-    public Immigrant(String name, int ID, String address, Date DoB) {
-        this.name = name;
+    public Immigrant(String first, String last,  int ID, String address, Date DoB) {
+        this.firstName = first;
+        this.lastName = last;
         this.ID = ID;
         this.address = address;
         this.DoB = DoB;
