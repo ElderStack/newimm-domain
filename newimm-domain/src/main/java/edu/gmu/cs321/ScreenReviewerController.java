@@ -16,6 +16,12 @@ public class ScreenReviewerController {
     void initialize() {
 
     }
+
+    @FXML
+    private void handleSendReviewButtonAction() {
+        System.out.println("Sent review");
+        sendReview();
+    }
     /**
      * Receives information from form input and loads into reviewer screen to review.
      * @return if the data was correctly loaded
