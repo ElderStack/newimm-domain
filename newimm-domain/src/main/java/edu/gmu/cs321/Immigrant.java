@@ -4,6 +4,7 @@
 package edu.gmu.cs321;
 
 import java.sql.Date;
+import java.util.ArrayList;
 
 /**
  * Models the user submitting data through the form.
@@ -39,6 +40,11 @@ public class Immigrant {
     private String email;
 
     /**
+     * List of Dependents
+     */
+    private ArrayList<Dependent> dependents;
+
+    /**
      * Default Constructor.
      * - first = null
      * - last = null
@@ -53,6 +59,7 @@ public class Immigrant {
         this.address = null;
         this.DoB = null;
         this.email = null;
+        this.dependents = null;
     }
 
     /**
@@ -198,10 +205,18 @@ public class Immigrant {
 
     /**
      * Returns Immigrant Date of Birth
-     * @return
+     * @return Date
      */
     public Date getDoB() {
         return this.DoB;
+    }
+
+    /**
+     * Returns Immigrant dependents
+     * @return ArrayList<Dependent>
+     */
+    public ArrayList<Dependent> getDependents(){
+        return this.dependents;
     }
 
     /**
@@ -230,5 +245,12 @@ public class Immigrant {
      */
     public void setEmail(String email){
         this.email = email;
+    }
+
+    /**
+     * Sets Immigrant dependents
+     */
+    public void setDependents(ArrayList<Dependent> deps){
+        this.dependents = deps;
     }
 }

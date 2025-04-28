@@ -209,6 +209,7 @@ public class ScreenDataEntry extends Application {
 
                 createImmigrant();
                 addDependents();
+                newImm.setDependents(dependents);
                 actiontarget.setText("Successfully submitted the form.");
 
 
