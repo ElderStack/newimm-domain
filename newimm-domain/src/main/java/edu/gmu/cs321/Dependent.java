@@ -24,7 +24,10 @@ public class Dependent extends Immigrant{
      * Parameterized constructor sets the guardian for the Dependent
      * @param guardian
      */
-    public Dependent(String name, int ID, String address, String dob, Immigrant guardian){
+    public Dependent(String first, String last, String dob, Immigrant guardian){
+        this.setFirstName(first);
+        this.setLastName(last);
+        this.setDoB(dob);
         this.guardian = guardian;
     }
 

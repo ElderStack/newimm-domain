@@ -120,5 +120,4 @@ public class TestDatabase {
         System.out.println("All users after update:");
         selectImmigrants();
     }
-
 }

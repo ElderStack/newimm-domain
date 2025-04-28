@@ -3,9 +3,6 @@
  */
 package edu.gmu.cs321;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.sql.Date;
 
 /**
@@ -13,10 +10,13 @@ import java.sql.Date;
  */
 public class Immigrant {
     /**
-     * Name of the Immigrant
+     * First name of the Immigrant
      */
     private String firstName;
 
+    /**
+     * First name of the Immigrant
+     */
     private String lastName;
     /**
      * Unique ID of the Immigrant
@@ -33,11 +33,15 @@ public class Immigrant {
      */
     private String address;
 
+    /**
+     * Email Address of the Immigrant
+     */
     private String email;
 
     /**
      * Default Constructor.
-     * - name = null
+     * - first = null
+     * - last = null
      * - ID = -1
      * - address = null
      * - DoB = null
@@ -53,7 +57,8 @@ public class Immigrant {
 
     /**
      * Parameterized Constructor
-     * @param name      Name of the Immigrant
+     * @param first     First name of the Immigrant
+     * @param last      Last name of the Immigrant
      * @param ID        Unique ID of the Immigrant
      * @param address   Address of the Immigrant
      * @param DoB       Date of Birth of the Immigrant
@@ -67,9 +72,10 @@ public class Immigrant {
         this.DoB = DoB;
     }
 
-        /**
+    /**
      * Parameterized Constructor
-     * @param name      Name of the Immigrant
+     * @param first     First name of the Immigrant
+     * @param last      Last name of the Immigrant
      * @param ID        Unique ID of the Immigrant
      * @param address   Address of the Immigrant
      * @param DoB       Date of Birth of the Immigrant
@@ -81,6 +87,14 @@ public class Immigrant {
         this.DoB = DoB;
     }
 
+    /**
+     * Parameterized Constructor
+     * @param first     First name of the Immigrant
+     * @param last      Last name of the Immigrant
+     * @param ID        Unique ID of the Immigrant
+     * @param address   Address of the Immigrant
+     * @param DoB       Date of Birth of the Immigrant
+     */
     public Immigrant(String first, String last, int ID, String email) {
         this.firstName = first;
         this.lastName = last;
@@ -88,6 +102,13 @@ public class Immigrant {
         this.email = email;
     }
 
+    /**
+     * Parameterized Constructor
+     * @param name      Name of the Immigrant
+     * @param ID        Unique ID of the Immigrant
+     * @param address   Address of the Immigrant
+     * @param DoB       Date of Birth of the Immigrant
+     */
     public Immigrant(String first, String last, int ID) {
         this.firstName = first;
         this.lastName = last;
@@ -104,21 +125,33 @@ public class Immigrant {
     }
 
     /**
-     * Returns the name of the Immigrant
+     * Returns the full name of the Immigrant
      * @return      String name
      */
     public String getName() {
         return this.firstName + " " + this.lastName;
     }
 
+    /**
+     * Returns the first name of the Immigrant
+     * @return      String firstName
+     */
     public String getFirstName(){
         return this.firstName;
     }
 
+    /**
+     * Returns the last name of the Immigrant
+     * @return      String lastName
+     */
     public String getLastName(){
         return this.lastName;
     }
 
+    /**
+     * Returns the email of the Immigrant
+     * @return      String email
+     */
     public String getEmail(){
         return this.email;
     }
@@ -132,13 +165,17 @@ public class Immigrant {
     }
 
     /**
-     * Sets the name of the Immigrant
+     * Sets the first name of the Immigrant
      * @param name  Name to be set
      */
     public void setFirstName(String first) {
         this.firstName = first;
     }
 
+    /**
+     * Sets the last name of the Immigrant
+     * @param name  Name to be set
+     */
     public void setLastName(String last) {
         this.lastName = last;
     }
@@ -185,62 +222,13 @@ public class Immigrant {
      * Sets Immigrant Date of Birth from String
      */
     public void setDoB(String Date){
-        verifyDoB(Date);
+        this.DoB = java.sql.Date.valueOf(Date);
     }
 
     /**
-     * Verifies that the String submitted as the date of birth is formatted correctly
-     * @return ture if date of birth is submitted correctly.
+     * Sets Immigrant email
      */
-    private void verifyDoB(String strDoB){
-        try{
-            DateFormat format = new SimpleDateFormat();
-            this.DoB = format.parse(strDoB);
-        }
-        catch (ParseException e){
-            System.err.println("Date format was incorrect.");
-        }
-    }
-
-    /**
-     * Helper method that checks if a string is numeric
-     * @param str String to be checked
-     * @return True if number is numeric
-     */
-    private boolean isNumeric(String str) {
-        if (str == null){
-            return false;
-        }
-
-        try {
-            Double.valueOf(str);
-            return true;
-        }
-        catch (NumberFormatException e) {
-            return false;
-        }
-    }
-
-    /**
-     * Helper method that checks if the date falls within real ranges
-     * Checks if all numbers are greater then 0
-     * For month and year checks if number is less then 31
-     * Means we can have a 31st month but if we need to validate that later we can do it here
-     */
-    private boolean validDate(String str){
-        if (!isNumeric(str)){
-            return false;
-        }
-
-        Double num = Double.valueOf(str);
-        if (num < 0){
-            return false;
-        }
-        if (str.length() == 2) {
-            if (num > 31) {
-                return false;
-            }
-        }
-        return true;
+    public void setEmail(String email){
+        this.email = email;
     }
 }
